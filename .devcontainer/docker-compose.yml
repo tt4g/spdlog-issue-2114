@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  spdlog-issue-2114:
+    volumes:
+      - .:/workspace:cached
+    command: /bin/sh -c "while sleep 1000; do :; done"
+

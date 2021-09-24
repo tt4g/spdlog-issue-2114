@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  spdlog-issue-2114:
+    image: spdlog-issue-2114
+    container_name: spdlog-issue-2114
+    build:
+      context: ./docker/gcc
+      dockerfile: Dockerfile
+    networks:
+      - spdlog-issue-2114-network
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+
+networks:
+  spdlog-issue-2114-network:
+    name: spdlog-issue-2114-network
+    driver: bridge
